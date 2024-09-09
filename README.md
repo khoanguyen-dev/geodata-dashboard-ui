@@ -148,31 +148,25 @@ This project leverages a comprehensive set of technologies to build an interacti
 - **[Git](https://git-scm.com/)**: A distributed version control system used for tracking changes in the codebase and facilitating collaboration among team members.
 - **[ESLint](https://eslint.org/)** and **[Prettier](https://prettier.io/)**: Tools used for maintaining code quality through linting and formatting, ensuring consistent code style across the project.
 
-
 ## Data Management
 
-The backend server manages data from CSV files and provides it through a REST API for the frontend application. The data includes crucial information such as latitude, longitude, flu type, species, and provenance. This setup enables the visualization and interaction of data through various map and chart components in the dashboard.
+The backend serves data from CSV files via a REST API, including key details like latitude, longitude, flu type, species, and provenance. This allows the frontend to visualize and interact with the data through maps and charts. Additionally, a separate CSV file is used for user authentication, ensuring only authorized users can access sensitive features.
 
-Additionally, the backend uses a separate CSV file to store usernames and passwords for user authentication. This file allows administrators to log in and access functionalities for managing and viewing data. The authentication system ensures that only authorized users can access sensitive features and data.
+Key data management features include:
 
-The dashboard supports a range of data management capabilities, including:
+- **Filtering**: Users can filter data by infection type, species, and provenance.
+- **Sorting**: Data can be sorted to highlight specific trends or cases.
+- **Visualization**: Various maps and charts enable data analysis across time periods and infection types.
 
-- **Filtering**: Users can apply filters to view specific data subsets based on infection type, species, and provenance.
-- **Sorting**: Data can be sorted to highlight trends or specific cases.
-- **Visualization**: The dashboard provides various visualization options, such as maps and charts, to analyze data across different time periods and infection types.
-
-This approach facilitates comprehensive data analysis and decision-making by allowing administrators to efficiently manage and interact with the bird flu data.
 
 ## FAIR and ORD Principles
 
-This project adheres to FAIR (Findable, Accessible, Interoperable, Reusable) and ORD (Open Research Data) principles to ensure that the data and software are easily accessible, reusable, and can be integrated into other systems. Key aspects include:
+The project follows FAIR ([Findable, Accessible, Interoperable, Reusable](https://www.go-fair.org/fair-principles/)) and ORD ([Open Research Data](https://op.europa.eu/en/publication-detail/-/publication/7f07de4e-8b6f-11e8-ac6a-01aa75ed71a1)) principles to promote open science and data sharing:
 
-- **Findable**: The data is organized and indexed in a structured manner, making it easy to find relevant information.
-- **Accessible**: The data and APIs are open and accessible to authorized users, ensuring transparency and ease of access.
-- **Interoperable**: The data follows standard formats (e.g., CSV, JSON) and uses common data models, making it compatible with other systems.
-- **Reusable**: The data is well-documented, and the code is designed with modularity in mind, allowing for easy reuse and adaptation in other projects.
-
-By implementing these principles, the Bird Flu Cases Dashboard aims to contribute to the broader goals of open science and data sharing in public health.
+- **Findable**: Data is structured and indexed for easy discovery.
+- **Accessible**: Open APIs ensure data is accessible to authorized users.
+- **Interoperable**: Standard formats (CSV, JSON) and common data models enhance compatibility.
+- **Reusable**: Well-documented data and modular code facilitate reuse and adaptation.
 
 ## Contribution
 
@@ -192,7 +186,7 @@ Contributions to the project are welcome! To contribute:
 
 ## Next Steps
 
-As you continue to enhance the Geodata Dashboard UI, consider implementing the following features and improvements:
+We consider implementing the following features and improvements:
 
 ### 1. **Testing for Backend and Frontend**
 
@@ -269,4 +263,4 @@ For questions, feedback, or further information, please reach out to:
 
 - **Email**: [khoanguyen.pro@outlook.com](mailto:khoanguyen.pro@outlook.com)
 
-We welcome your thoughts and are eager to hear how you use or contribute to the Bird Flu Cases Dashboard!
+We welcome your thoughts and are eager to hear how you use or contribute to the Bird Flu GeoData Dashboard!
