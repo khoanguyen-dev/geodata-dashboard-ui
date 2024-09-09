@@ -90,7 +90,7 @@ const useFluData = (viewMode: 'seasons' | 'months') => {
           return {
             latitude,
             longitude,
-            date: `${seasonYear} - ${viewMode === 'seasons' ? season : t(`months.${monthNames[month]}`)}`,
+            date: `${seasonYear} - ${viewMode === 'seasons' ? season : monthNames[month]}`,
             fluType,
             species: entry.species,
             provenance: entry.provenance,

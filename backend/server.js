@@ -38,7 +38,6 @@ const parseCSV = (filePath, callback) => {
       results.push(data); // Push each row of data into the results array
     })
     .on('end', () => {
-      console.log(`Parsed ${results.length} total entries`); // Log the total number of entries parsed
       callback(results); // Return the parsed results via the callback
     })
     .on('error', (error) => {
