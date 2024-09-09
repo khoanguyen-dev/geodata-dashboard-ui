@@ -23,8 +23,8 @@ This project is a Geodata Dashboard UI designed to visualize bird flu cases over
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/khoanguyen-dev/geodata-dashboard-ui.git
+   cd geodata-dashboard-ui
    ```
 2. **Navigate to the backend directory and install the necessary dependencies**:
    ```bash
@@ -192,86 +192,61 @@ Contributions to the project are welcome! To contribute:
 
 ## Next Steps
 
-As you continue to enhance the Geodata Dashboard UI, consider the following potential features and improvements.
+As you continue to enhance the Geodata Dashboard UI, consider implementing the following features and improvements:
 
-### 1. **Enhanced Data Visualization Options**
+### 1. **Testing for Backend and Frontend**
 
-**Feature**: Add additional visualization types such as bar charts, pie charts, and scatter plots.
+Implement comprehensive testing to ensure the reliability and robustness of both backend and frontend components. 
 
-**Benefit**: Provides users with multiple ways to interpret and analyze the bird flu data, making the dashboard more versatile.
+- **Technologies**: Use [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for frontend tests, and [Jest](https://jestjs.io/), [Supertest](https://www.npmjs.com/package/supertest), or [Mocha](https://mochajs.org/) for backend API testing.
 
-**Implementation**:
-- **Explore Libraries**: Utilize libraries like [Recharts](https://recharts.org/en-US) or [Chart.js](https://www.chartjs.org/) to integrate new chart types.
-- **Component Development**: Create new React components for each chart type and incorporate them into the dashboard.
-- **Data Integration**: Ensure that these components are properly integrated with the existing data sources and that they respond to user interactions like filtering and time-series analysis.
+### 2. **Advanced Data Management for Administrators**
 
-### 2. **Real-Time Data Updates**
+Enable administrators to manage, validate, and provide feedback on data files directly through the dashboard, including options for uploading, adjusting, and removing multiple data files.
 
-**Feature**: Implement real-time data updates to reflect the most current bird flu information.
+- **Technologies**: Implement file management with [React Dropzone](https://react-dropzone.js.org/) for file uploads and [Yup](https://github.com/jquense/yup) for data validation.
 
-**Benefit**: Enhances the dashboard's relevance and utility by providing the latest data, which is crucial for timely decision-making.
+### 3. **Enhanced Data Visualization Options**
 
-**Implementation**:
-- **WebSocket Integration**: Use WebSocket or server-sent events (SSE) to push real-time updates from the server to the frontend.
-- **Frontend Handling**: Update React components to handle real-time data streams and refresh the UI accordingly.
-- **Backend Support**: Modify the backend to support real-time data broadcasting and ensure it can handle concurrent connections.
+Add bar charts, pie charts, and scatter plots to provide users with diverse ways to interpret data, enhancing the dashboard's analytical capabilities.
 
-### 3. **User Authentication and Role Management**
+- **Technologies**: Utilize [Recharts](https://recharts.org/en-US) or [Chart.js](https://www.chartjs.org/) to integrate new chart types.
 
-**Feature**: Implement user authentication and role-based access control.
+### 4. **Real-Time Data Updates**
 
-**Benefit**: Secures sensitive data and functionalities, ensuring that only authorized users can access or modify certain aspects of the dashboard.
+Incorporate real-time data updates to reflect the latest information, crucial for timely decision-making.
 
-**Implementation**:
-- **Authentication Library**: Integrate an authentication library such as [Passport.js](http://www.passportjs.org/) for Node.js or use services like Auth0.
-- **Role Management**: Define user roles and permissions, and implement role-based access control within the application.
-- **UI Adjustments**: Modify the UI to display different content or options based on user roles and authentication status.
+- **Technologies**: Use [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) or [Server-Sent Events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) for real-time data streaming.
 
-### 4. **Advanced Filtering and Search**
+### 5. **User Authentication and Role Management**
 
-**Feature**: Introduce advanced filtering and search capabilities to allow users to more precisely query the data.
+Implement user authentication and role-based access to secure data and functionalities, ensuring only authorized access.
 
-**Benefit**: Improves user experience by enabling more detailed and specific data analysis, which is especially useful for large datasets.
+- **Technologies**: Integrate [Auth0](https://auth0.com/) or [Passport.js](http://www.passportjs.org/) for authentication and role management.
 
-**Implementation**:
-- **Filter Components**: Develop new React components for advanced filters and search inputs, and integrate them into the dashboard.
-- **Backend Queries**: Update the backend to handle complex queries and filtering requests efficiently.
-- **Performance Optimization**: Ensure that advanced filters and search functionalities do not adversely affect the performance of the application.
+### 6. **Advanced Filtering and Search**
 
-### 5. **Customizable User Dashboards**
+Introduce advanced filtering and search options to allow users to query data more precisely, enhancing the user experience with large datasets.
 
-**Feature**: Allow users to customize their dashboard views and save their preferences.
+- **Technologies**: Use [React Select](https://react-select.com/) for advanced filtering UI and optimize backend queries with [ElasticSearch](https://www.elastic.co/elasticsearch/) for efficient search capabilities.
 
-**Benefit**: Personalizes the user experience and improves usability by letting users tailor the dashboard to their needs.
+### 7. **Customizable User Dashboards**
 
-**Implementation**:
-- **Customization Options**: Create features that let users adjust the layout, select preferred visualizations, and save these settings.
-- **Persistent Storage**: Use local storage or a user preferences database to save and load customizations.
-- **User Interface**: Design and implement an interface for users to configure and manage their dashboard settings.
+Allow users to customize their dashboard layouts and save preferences, improving usability by letting them tailor the dashboard to their needs.
 
-### 6. **Improved Accessibility Features**
+- **Technologies**: Use [Redux](https://redux.js.org/) or [Context API](https://reactjs.org/docs/context.html) for state management and [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) or [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) for saving user preferences.
 
-**Feature**: Enhance accessibility features to support users with disabilities.
+### 8. **Improved Accessibility Features**
 
-**Benefit**: Ensures the dashboard is usable by a broader audience, complying with accessibility standards and guidelines.
+Enhance accessibility to ensure the dashboard is usable by all users, including those with disabilities.
 
-**Implementation**:
-- **Accessibility Testing**: Conduct accessibility audits using tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) or [axe](https://www.deque.com/axe/).
-- **Aria Labels and Roles**: Implement ARIA (Accessible Rich Internet Applications) labels and roles to improve screen reader compatibility.
-- **Keyboard Navigation**: Ensure that all interactive elements are navigable and usable via keyboard.
+- **Technologies**: Conduct audits with [Lighthouse](https://developers.google.com/web/tools/lighthouse) and [axe](https://www.deque.com/axe/) for accessibility improvements, and implement [ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) roles and labels.
 
-### 7. **Integration with External Data Sources**
+### 9. **Integration with External Data Sources**
 
-**Feature**: Expand the dashboard's capabilities by integrating with additional external data sources.
+Expand the dashboard's data by integrating with external sources, offering a more comprehensive analysis.
 
-**Benefit**: Provides a more comprehensive view by combining various datasets, potentially offering richer insights.
-
-**Implementation**:
-- **API Integration**: Identify and connect to relevant APIs that provide supplementary data.
-- **Data Normalization**: Ensure that data from external sources is compatible with the existing data model and formats.
-- **UI Enhancements**: Update the dashboard UI to accommodate and display the additional data effectively.
-
-By implementing these potential features and improvements, you can enhance the functionality, usability, and relevance of the Geodata Dashboard UI, making it a more powerful tool for analyzing and visualizing bird flu data.
+- **Technologies**: Use [Axios](https://axios-http.com/) or [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for API integration and ensure compatibility with [GeoJSON](https://geojson.org/) for geospatial data.
 
 ## License
 
