@@ -275,13 +275,13 @@ By implementing these potential features and improvements, you can enhance the f
 
 ## License
 
-This project is licensed under the MIT License, which allows for free use, modification, and distribution of the software. You can review the full terms of the license in the [LICENSE](LICENSE) file included in this repository. This license promotes open collaboration and ensures that the project remains accessible to all users.
+This project is licensed under the Apache License 2.0, which allows for free use, modification, and distribution of the software under certain conditions. You can review the full terms of the license in the [LICENSE](LICENSE) file included in this repository. This license promotes open collaboration and ensures that the project remains accessible to all users.
 
 ## Acknowledgements
 
 We gratefully acknowledge the contributions and support from the following:
 
-- **OpenAI**: For providing advanced AI models that assisted in the development of this project.
+- **Swiss Data Science Center**: For providing the task that served as the foundation for this project.
 - **Material-UI**: For their robust React components, which were integral to building the user interface.
 - **Leaflet** and **react-leaflet**: For their powerful mapping tools, which enabled the interactive map features.
 - **The World Health Organization (WHO)**, **Federal Office of Public Health (FOPH) Switzerland**, and **European Commission**: For providing open data and resources that are vital for public health monitoring and research.
