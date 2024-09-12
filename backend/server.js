@@ -5,6 +5,7 @@ const fs = require('fs'); // File system module to work with file paths
 const path = require('path'); // Module to work with file and directory paths
 const csvParser = require('csv-parser'); // Module to parse CSV files
 const bodyParser = require('body-parser'); // Middleware to parse incoming request bodies
+const multer = require('multer'); // Middleware to handle file uploads
 
 // Initialize Express application
 const app = express();
@@ -18,11 +19,10 @@ app.use(cors({
 
 app.use(bodyParser.json()); // Middleware to parse JSON bodies of incoming requests
 
-/**
- * Utility function to parse CSV data from a file and return results via callback.
- * @param {string} filePath - The path to the CSV file.
- * @param {function} callback - Callback function to handle the parsed results.
- */
+// Configure file upload destination and filename
+const upload = multer({ dest: 'data/' });
+
+// Utility function to parse CSV data from a file and return results via callback
 const parseCSV = (filePath, callback) => {
   const results = []; // Array to store parsed data
   if (!fs.existsSync(filePath)) {
@@ -46,29 +46,64 @@ const parseCSV = (filePath, callback) => {
     });
 };
 
-/**
- * API endpoint to fetch bird flu data, with optional filtering by year.
- * Responds with JSON data.
- */
+// API endpoint to fetch bird flu data from a specified CSV file
 app.get('/api/data', (req, res) => {
-  const filePath = path.join(__dirname, 'data', 'fake_bird_data_switzerland_v2.csv'); // Path to the data file
-  const year = req.query.year; // Optional query parameter for filtering by year
+  const database = req.query.database || 'fake_bird_data_switzerland_v2'; // Default to main database if none is specified
+  const filePath = path.join(__dirname, 'data', `${database}.csv`); // Path to the data file
 
-  // Parse the CSV data and respond with filtered results if a year is specified
+  // Parse the CSV data and respond with the results
   parseCSV(filePath, (results) => {
-    if (year) {
-      const filteredResults = results.filter(entry => entry.year === year); // Filter data by year
-      res.json(filteredResults); // Respond with the filtered results
-    } else {
-      res.json(results); // Respond with all results if no filter is applied
-    }
+    const processedData = results.map(entry => ({
+      latitude: parseFloat(entry.latitude),
+      longitude: parseFloat(entry.longitude),
+      species: entry.species,
+      H5N1: parseFloat(entry.H5N1) || 0,
+      H5N2: parseFloat(entry.H5N2) || 0,
+      H7N2: parseFloat(entry.H7N2) || 0,
+      H7N8: parseFloat(entry.H7N8) || 0,
+      timestamp: entry.timestamp,
+      provenance: entry.provenance
+    }));
+    res.json(processedData);
   });
 });
 
-/**
- * API endpoint to authenticate user credentials.
- * Responds with a success or failure message.
- */
+// API endpoint to list available CSV files in the 'data' folder
+app.get('/api/files', (req, res) => {
+  const dataDir = path.join(__dirname, 'data');
+  fs.readdir(dataDir, (err, files) => {
+    if (err) {
+      console.error('Failed to list data files:', err);
+      res.status(500).json({ error: 'Failed to list data files' });
+      return;
+    }
+
+    // Filter and return files without the '.csv' extension
+    const csvFiles = files.filter(file => file.endsWith('.csv')).map(file => path.basename(file, '.csv'));
+    res.json(csvFiles);
+  });
+});
+
+// API endpoint to handle file uploads
+app.post('/api/upload', upload.single('file'), (req, res) => {
+  // Ensure a file was uploaded and has a .csv extension
+  const { file } = req;
+  if (!file || !file.originalname.endsWith('.csv')) {
+    return res.status(400).json({ error: 'Only CSV files are allowed' });
+  }
+
+  // Move file to the 'data' directory with the correct extension
+  const targetPath = path.join(__dirname, 'data', file.originalname);
+  fs.rename(file.path, targetPath, (err) => {
+    if (err) {
+      console.error('Failed to save file:', err);
+      return res.status(500).json({ error: 'Failed to save file' });
+    }
+    res.json({ success: true, message: 'File uploaded successfully' });
+  });
+});
+
+// API endpoint to authenticate user credentials
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body; // Extract credentials from the request body
   const usersFilePath = path.join(__dirname, 'data', 'users.csv'); // Path to the CSV file with user credentials

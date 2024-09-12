@@ -1,15 +1,17 @@
 /**
  * Interface for representing data used on the map.
- * Contains coordinates, date, flu type, species, and provenance information.
+ * Contains coordinates, date, flu type, species, provenance information, and a raw date in ISO format.
  */
 export interface MapData {
   latitude: number; // Latitude of the flu case location
   longitude: number; // Longitude of the flu case location
   date: string; // Date formatted as a string, e.g., '2020 - Winter'
+  rawDate: string; // Date formatted as 'YYYY-MM-DD', used for date inputs and sorting
   fluType: 'H5N1' | 'H5N2' | 'H7N2' | 'H7N8' | 'Unknown'; // Type of flu detected
   species: string; // Species affected by the flu
   provenance: string; // Origin or source of the data
 }
+
 
 /**
  * Interface for raw data fetched from the backend or API.

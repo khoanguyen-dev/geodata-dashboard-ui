@@ -1,14 +1,13 @@
-/**
- * About component provides detailed information about the Bird Flu Dashboard,
- * including context, background on avian influenza, and its global and regional impact.
- * It uses markdown rendering for rich text content and supports multiple languages.
- */
-
 import React from 'react'; // React core functionalities
 import ReactMarkdown from 'react-markdown'; // Used for rendering markdown content
-import { Box, Typography } from '@mui/material'; // Material UI components for building the navigation bar
-import { useTranslation } from 'react-i18next'; // Hook for translation
+import { Box, Typography } from '@mui/material'; // Material UI components for layout and typography
+import { useTranslation } from 'react-i18next'; // Hook for translations
 
+/**
+ * About component provides detailed information about the Bird Flu Dashboard,
+ * including its features, capabilities, and administrative functionalities.
+ * It uses markdown rendering for rich text content and supports multiple languages.
+ */
 const About: React.FC = () => {
     const { t } = useTranslation(); // Hook to fetch translated strings
 
@@ -24,8 +23,9 @@ const About: React.FC = () => {
                 {t('aboutTitle')} {/* Translated title for the About section */}
             </Typography>
 
-            {/* Markdown content describing the dashboard */}
-            <ReactMarkdown>{t('aboutContent')}</ReactMarkdown>
+            {/* Content about Dashboard Features */}
+            <ReactMarkdown>{t('aboutContent') || ''}</ReactMarkdown> {/* Ensure a single string is passed */}
+            <ReactMarkdown>{t('dashboardFeaturesContent') || ''}</ReactMarkdown> {/* Ensure a single string is passed */}
 
             {/* Title and content about Avian Flu */}
             <Typography 
@@ -36,7 +36,7 @@ const About: React.FC = () => {
             >
                 {t('avianFluTitle')} {/* Translated title about Avian Influenza */}
             </Typography>
-            <ReactMarkdown>{t('avianFluContent')}</ReactMarkdown>
+            <ReactMarkdown>{t('avianFluContent') || ''}</ReactMarkdown> {/* Ensure a single string is passed */}
 
             {/* Title and content about Global and Regional Context */}
             <Typography 
@@ -47,11 +47,9 @@ const About: React.FC = () => {
             >
                 {t('contextTitle')} {/* Translated title for global and regional context */}
             </Typography>
-
-            {/* Multiple markdown content sections detailing the context from various organizations */}
-            <ReactMarkdown>{t('foph')}</ReactMarkdown> {/* Information from Federal Office of Public Health */}
-            <ReactMarkdown>{t('who')}</ReactMarkdown> {/* Information from the World Health Organization */}
-            <ReactMarkdown>{t('ec')}</ReactMarkdown> {/* Information from the European Commission */}
+            <ReactMarkdown>{t('foph') || ''}</ReactMarkdown> {/* Ensure a single string is passed */}
+            <ReactMarkdown>{t('who') || ''}</ReactMarkdown> {/* Ensure a single string is passed */}
+            <ReactMarkdown>{t('ec') || ''}</ReactMarkdown> {/* Ensure a single string is passed */}
 
             {/* Title and content on the importance of monitoring and prevention */}
             <Typography 
@@ -62,7 +60,7 @@ const About: React.FC = () => {
             >
                 {t('importanceTitle')} {/* Translated title on the importance of monitoring */}
             </Typography>
-            <ReactMarkdown>{t('importanceContent')}</ReactMarkdown>
+            <ReactMarkdown>{t('importanceContent') || ''}</ReactMarkdown> {/* Ensure a single string is passed */}
         </Box>
     );
 };

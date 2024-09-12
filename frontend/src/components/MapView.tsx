@@ -16,7 +16,6 @@ import { MapData } from '../types/birdFluTypes'; // Type definitions for map dat
 import { fluTypeColors } from '../constants/colors'; // Consistent color scheme for visual differentiation of flu types
 import { useTranslation } from 'react-i18next'; // Hook for accessing internationalization and translation functions
 
-
 interface MapViewProps {
   data: MapData[]; // Array of map data points
   showHeatMap: boolean; // Boolean flag to toggle heatmap visibility
@@ -129,4 +128,4 @@ const MapView: React.FC<MapViewProps> = ({ data, showHeatMap, showClusters, mapK
   );
 };
 
-export default MapView;
+export default MapView; // Export the MapView component

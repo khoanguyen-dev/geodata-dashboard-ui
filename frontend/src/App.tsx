@@ -16,22 +16,24 @@ const App: React.FC = () => {
     <div>
       {/* Render the Navigation component to provide the app's header with navigation links */}
       <Navigation />
-      <Routes>
-        {/* Define the route for the Dashboard component, accessible at '/dashboard' */}
-        <Route path="/dashboard" element={<Dashboard />} />
+      <div style={{ padding: '20px' }}>
+        <Routes>
+          {/* Define the route for the Dashboard component, accessible at '/dashboard' */}
+          <Route path="/dashboard" element={<Dashboard />} />
 
-        {/* Define the route for the About component, accessible at '/about' */}
-        <Route path="/about" element={<About />} />
+          {/* Define the route for the About component, accessible at '/about' */}
+          <Route path="/about" element={<About />} />
 
-        {/* Define the route for the Contact component, accessible at '/contact' */}
-        <Route path="/contact" element={<Contact />} />
+          {/* Define the route for the Contact component, accessible at '/contact' */}
+          <Route path="/contact" element={<Contact />} />
 
-        {/* Define the route for the Database component, accessible at '/database' */}
-        <Route path="/database" element={<Database />} />
+          {/* Define the route for the Database component, accessible at '/database' */}
+          <Route path="/database" element={<Database />} />
 
-        {/* Default route that renders the Dashboard component if no other route is matched */}
-        <Route path="/" element={<Dashboard />} />
-      </Routes>
+          {/* Default route that renders the Dashboard component if no other route is matched */}
+          <Route path="/" element={<Dashboard />} />
+        </Routes>
+      </div>
     </div>
   );
 };

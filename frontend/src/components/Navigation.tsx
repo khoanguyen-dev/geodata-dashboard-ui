@@ -6,28 +6,68 @@
  * routes to different pages using React Router.
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Tabs, Tab, Box, Typography, Select, MenuItem, SelectChangeEvent, IconButton } from '@mui/material'; // Material UI components for building the navigation bar
-import { useNavigate } from 'react-router-dom'; // Hook for navigation between routes
+import { useNavigate, useLocation } from 'react-router-dom'; // Hooks for navigation and accessing the current route
 import { useTranslation } from 'react-i18next'; // Hook for translations and internationalization
 import PublicIcon from '@mui/icons-material/Public'; // Icon for language selection
 
 const Navigation: React.FC = () => {
+    const navigate = useNavigate(); // Hook for navigating between routes
+    const location = useLocation(); // Hook for accessing the current route
+    const { i18n, t } = useTranslation(); // Hook for translations
     const [value, setValue] = useState(0); // State for controlling the active tab
     const [language, setLanguage] = useState('en'); // State for managing selected language
-    const navigate = useNavigate(); // Hook for navigating between routes
-    const { i18n, t } = useTranslation(); // Hook for translations
 
-    // Handler for tab change - updates state and navigates to the corresponding page
+    /**
+     * Effect to update the active tab based on the current route.
+     */
+    useEffect(() => {
+        switch (location.pathname) {
+            case '/dashboard':
+                setValue(0);
+                break;
+            case '/about':
+                setValue(1);
+                break;
+            case '/contact':
+                setValue(2);
+                break;
+            case '/database':
+                setValue(3);
+                break;
+            default:
+                setValue(0);
+        }
+    }, [location.pathname]);
+
+    /**
+     * Handler for tab change - updates state and navigates to the corresponding page.
+     * @param event - The change event for the tab.
+     * @param newValue - The new value for the active tab.
+     */
     const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
-        if (newValue === 0) navigate('/dashboard');
-        if (newValue === 1) navigate('/about');
-        if (newValue === 2) navigate('/contact');
-        if (newValue === 3) navigate('/database'); // Navigate to the Database page
+        switch (newValue) {
+            case 0:
+                navigate('/dashboard');
+                break;
+            case 1:
+                navigate('/about');
+                break;
+            case 2:
+                navigate('/contact');
+                break;
+            case 3:
+                navigate('/database');
+                break;
+        }
     };
 
-    // Handler for language change - updates state and changes the app's language
+    /**
+     * Handler for language change - updates state and changes the app's language.
+     * @param event - The change event for the language selector.
+     */
     const handleLanguageChange = (event: SelectChangeEvent<string>) => {
         const selectedLanguage = event.target.value as string;
         setLanguage(selectedLanguage);

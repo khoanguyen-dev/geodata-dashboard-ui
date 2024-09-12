@@ -1,0 +1,65 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+/build/
+/dist/
+
+# Temporary files
+*.tmp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Go server run files
+*.exe
+*.out
+*.log
+*.test
+
+# Ignore Go-specific directories and files
+/go/bin/
+/go/pkg/
+/go/src/
+/go.mod
+/go.sum
+
+# Build artifacts
+*.o
+*.a
+*.so
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dependency directories
+/.pnp
+.pnp.js
+
+# IDE and editor specific files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Compiled TypeScript output
+*.tsbuildinfo
+
+# Coverage reports
+/coverage/
+/.nyc_output/
+/coverage-final.json
+
+# Miscellaneous
+.DS_Store

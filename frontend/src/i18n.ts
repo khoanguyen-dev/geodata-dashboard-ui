@@ -10,8 +10,21 @@ const resources = {
             language: 'Language:',
             aboutTitle: 'About the Bird Flu Cases Dashboard',
             toolbarTitle: 'Bird Flu Dashboard',
+            dashboardFeaturesContent: 'The Bird Flu Cases Dashboard provides the following features:\n\n' +
+                '- **Choose a Specific Database:** Select from available databases to view relevant data.\n' +
+                '- **Compare Data Across Locations:** Analyze and compare bird flu cases across different regions.\n' +
+                '- **Select a Specific Period:** Filter data based on specific time periods within the database.\n' +
+                '- **Switch Between Views:** Choose between Single Map and Double Map views for data visualization.\n' +
+                '- **Timeline Modes:** Toggle between seasonal and monthly timeline views.\n' +
+                '- **Map Visualization Options:** Switch between cluster maps and heat maps.\n' +
+                '- **Filter Options:** Refine data by infection type, species, and provenance.\n' +
+                '- **Time Slider and Playback Controls:** Navigate through data with a time slider and playback controls.\n' +
+                '- **PDF Report Capture:** Print out a detailed PDF report of the current view.\n\n' +
+                'For admins:\n' +
+                '- **Login and View Database:** Secure access to view and manage the database.\n' +
+                '- **Update Database:** Ability to update or upload new databases for analysis.',
             aboutContent:
-                'The Bird Flu Cases Dashboard offers a comprehensive and interactive platform for exploring avian influenza outbreaks. Users can view and compare data on bird flu cases across various locations and time periods, using both single and double map views. The dashboard includes options to filter cases by infection type, species, and provenance, as well as tools to switch between cluster and heat map visualizations. Additionally, a time slider and playback controls allow users to navigate through data over seasons or months. Monitoring these cases is essential to prevent potential outbreaks in humans and safeguard public health.',
+                'The Bird Flu Cases Dashboard offers a comprehensive and interactive platform for exploring avian influenza outbreaks. Monitoring these cases is essential to prevent potential outbreaks in humans and safeguard public health.',
             avianFluTitle: 'What is Avian Influenza?',
             avianFluContent:
                 'Avian influenza, commonly known as bird flu, is a highly contagious viral disease affecting both wild and domestic birds. It is caused by influenza type A viruses, which have several subtypes, including H5N1, H5N2, H7N2, and H7N8. Some strains, particularly H5N1, are known to cause severe illness in humans, though human infections are rare and typically occur through direct or close contact with infected birds or contaminated environments.',
@@ -77,6 +90,13 @@ const resources = {
             contactMessage: 'If you have any questions or feedback, feel free to reach out to us at:',
             doubleMapView: 'Double Map View',
             time: 'Time',
+            uploadTitle: 'Upload your own file:',
+            selectFile: 'Select file',
+            submit: 'Submit',
+            selectDatabase: 'Select database',
+            singleMapView: 'Single Map View',
+            fromDate: 'From Date',
+            toDate: 'To Date',
         },
     },
     fr: {
@@ -86,8 +106,20 @@ const resources = {
             language: 'Langue:',
             aboutTitle: 'À propos du tableau de bord des cas de grippe aviaire',
             toolbarTitle: 'Tableau de bord de la grippe aviaire',
-            aboutContent:
-                'Le tableau de bord des cas de grippe aviaire offre une plateforme complète et interactive pour explorer les épidémies de grippe aviaire. Les utilisateurs peuvent visualiser et comparer les données sur les cas de grippe aviaire à travers différentes localisations et périodes, en utilisant des vues de carte unique ou double. Le tableau de bord comprend des options pour filtrer les cas par type d’infection, espèce et provenance, ainsi que des outils pour basculer entre les visualisations de cartes en clusters et en chaleur. De plus, un curseur temporel et des contrôles de lecture permettent aux utilisateurs de naviguer dans les données sur les saisons ou les mois. Surveiller ces cas est essentiel pour prévenir les épidémies potentielles chez l’homme et protéger la santé publique.',
+            "dashboardFeaturesContent": "Le tableau de bord des cas de grippe aviaire offre les fonctionnalités suivantes:\n" +
+                "- **Choisir une base de données spécifique :** Sélectionnez parmi les bases de données disponibles pour afficher les données pertinentes.\n" +
+                "- **Comparer les données entre les lieux :** Analysez et comparez les cas de grippe aviaire dans différentes régions.\n" +
+                "- **Choisir une période spécifique :** Filtrer les données en fonction de périodes spécifiques dans la base de données.\n" +
+                "- **Changer de vue :** Choisissez entre les vues Carte simple et Carte double pour la visualisation des données.\n" +
+                "- **Modes de chronologie :** Basculer entre les vues saisonnières et mensuelles.\n" +
+                "- **Options de visualisation cartographique :** Basculer entre les cartes en grappes et les cartes thermiques.\n" +
+                "- **Options de filtrage :** Affiner les données par type d'infection, espèce et provenance.\n" +
+                "- **Glissière temporelle et commandes de lecture :** Naviguez dans les données à l'aide d'une glissière temporelle et de commandes de lecture.\n" +
+                "- **Capture de rapport PDF :** Imprimez un rapport PDF détaillé de la vue actuelle.\n" +
+                "Pour les administrateurs :\n" +
+                "- **Connexion et visualisation de la base de données :** Accès sécurisé à la visualisation et à la gestion de la base de données.\n" +
+                "- **Mise à jour de la base de données :** Possibilité de mettre à jour ou de télécharger de nouvelles bases de données à des fins d'analyse."
+            , "aboutContent": "Le tableau de bord des cas de grippe aviaire offre une plateforme complète et interactive pour explorer les épidémies de grippe aviaire. Le suivi de ces cas est essentiel pour prévenir les épidémies potentielles chez l'homme et préserver la santé publique.",
             avianFluTitle: 'Qu’est-ce que la grippe aviaire?',
             avianFluContent:
                 'La grippe aviaire, communément appelée grippe aviaire, est une maladie virale hautement contagieuse qui affecte les oiseaux sauvages et domestiques. Elle est causée par les virus de la grippe de type A, qui ont plusieurs sous-types, y compris H5N1, H5N2, H7N2 et H7N8. Certaines souches, en particulier H5N1, sont connues pour causer des maladies graves chez les humains, bien que les infections humaines soient rares et se produisent généralement par contact direct ou étroit avec des oiseaux infectés ou des environnements contaminés.',
@@ -153,6 +185,13 @@ const resources = {
             contactMessage: 'Si vous avez des questions ou des commentaires, n’hésitez pas à nous contacter à :',
             doubleMapView: 'Double vue sur la carte',
             time: 'Temps',
+            uploadTitle: 'Téléchargez votre propre fichier :',
+            selectFile: 'Sélectionner un fichier',
+            submit: 'Envoyer',
+            selectDatabase: 'Sélectionner la base de données ',
+            singleMapView: 'Vue Carte Unique',
+            fromDate: 'Date De Début',
+            toDate: 'Date De Fin',
         },
     },
     de: {
@@ -162,8 +201,20 @@ const resources = {
             language: 'Sprache:',
             aboutTitle: 'Über das Dashboard zu Vogelgrippefällen',
             toolbarTitle: 'Vogelgrippe-Dashboard',
-            aboutContent:
-                'Das Dashboard zu Vogelgrippe-Fällen bietet eine umfassende und interaktive Plattform zur Erkundung von Ausbrüchen der Vogelgrippe. Nutzer können Daten zu Vogelgrippefällen an verschiedenen Orten und Zeiträumen anzeigen und vergleichen, indem sie zwischen Einzel- und Doppelkartenansichten wählen. Das Dashboard enthält Filteroptionen nach Infektionstyp, Art und Herkunft sowie Werkzeuge zum Wechseln zwischen Cluster- und Heatmap-Visualisierungen. Zusätzlich ermöglichen ein Zeitschieberegler und Wiedergabesteuerungen den Nutzern, durch die Daten nach Jahreszeiten oder Monaten zu navigieren. Die Überwachung dieser Fälle ist entscheidend, um potenzielle Ausbrüche beim Menschen zu verhindern und die öffentliche Gesundheit zu schützen.',
+            "dashboardFeaturesContent": "Das Vogelgrippe-Dashboard bietet die folgenden Funktionen:\n" +
+                "- **Wählen Sie eine bestimmte Datenbank aus:** Wählen Sie aus den verfügbaren Datenbanken, um relevante Daten anzuzeigen.\n" +
+                "- **Datenstandorte vergleichen:** Analysieren und vergleichen Sie Vogelgrippefälle in verschiedenen Regionen.\n" +
+                "- **Wählen Sie einen bestimmten Zeitraum aus:** Filtern Sie die Daten nach bestimmten Zeiträumen in der Datenbank.\n" +
+                "- **Ansicht wechseln:** Wählen Sie zwischen Einzelkarten- und Doppelkartenansichten zur Datenvisualisierung.\n" +
+                "- **Zeitleistenmodi:** Wechseln Sie zwischen saisonalen und monatlichen Ansichten.\n" +
+                "- **Kartenansichtsoptionen:** Wechseln Sie zwischen Clusterkarten und Wärmekarten.\n" +
+                "- **Filteroptionen:** Verfeinern Sie die Daten nach Infektionstyp, Spezies und Herkunft.\n" +
+                "- **Zeitschieberegler und Wiedergabesteuerungen:** Navigieren Sie durch die Daten mit einem Zeitschieberegler und Wiedergabesteuerungen.\n" +
+                "- **PDF-Berichtserfassung:** Drucken Sie einen detaillierten PDF-Bericht der aktuellen Ansicht aus.\n" +
+                "Für Administratoren:\n" +
+                "- **Anmeldung und Datenbankansicht:** Sicherer Zugriff auf die Visualisierung und Verwaltung der Datenbank.\n" +
+                "- **Datenbankaktualisierung:** Möglichkeit, neue Datenbanken für Analysezwecke hochzuladen oder zu aktualisieren.",
+            "aboutContent": "Das Vogelgrippe-Dashboard bietet eine umfassende und interaktive Plattform zur Untersuchung von Vogelgrippeausbrüchen. Die Überwachung dieser Fälle ist entscheidend, um mögliche Ausbrüche bei Menschen zu verhindern und die öffentliche Gesundheit zu schützen.",
             avianFluTitle: 'Was ist Vogelgrippe?',
             avianFluContent:
                 'Die Vogelgrippe, auch bekannt als Vogelgrippe, ist eine hoch ansteckende Viruserkrankung, die sowohl wildlebende als auch Hausvögel betrifft. Sie wird durch Influenza-A-Viren verursacht, die mehrere Subtypen haben, darunter H5N1, H5N2, H7N2 und H7N8. Einige Stämme, insbesondere H5N1, sind dafür bekannt, beim Menschen schwere Krankheiten zu verursachen, obwohl menschliche Infektionen selten sind und typischerweise durch direkten oder engen Kontakt mit infizierten Vögeln oder kontaminierten Umgebungen auftreten.',
@@ -229,6 +280,13 @@ const resources = {
             contactMessage: 'Wenn Sie Fragen oder Feedback haben, können Sie uns gerne kontaktieren unter:',
             doubleMapView: 'Doppelte Kartenansicht',
             time: 'Zeit',
+            uploadTitle: 'Eigene Datei hochladen:',
+            selectFile: 'Datei auswählen',
+            submit: 'Senden',
+            selectDatabase: 'Datenbank auswählen',
+            singleMapView: 'Einzelkarte Ansicht',
+            fromDate: 'Von Datum',
+            toDate: 'Bis Datum',
         },
     },
 
@@ -239,8 +297,20 @@ const resources = {
             language: 'Lingua:',
             aboutTitle: 'Informazioni sul pannello dei casi di influenza aviaria',
             toolbarTitle: 'Pannello di controllo dell\'influenza aviaria',
-            aboutContent:
-                'Il pannello dei casi di influenza aviaria offre una piattaforma completa e interattiva per esplorare i focolai di influenza aviaria. Gli utenti possono visualizzare e confrontare i dati sui casi di influenza aviaria in diverse località e periodi di tempo, utilizzando viste di mappa singola o doppia. Il pannello include opzioni per filtrare i casi per tipo di infezione, specie e provenienza, nonché strumenti per passare tra visualizzazioni a cluster e mappa di calore. Inoltre, un cursore temporale e i controlli di riproduzione consentono agli utenti di navigare nei dati in base alle stagioni o ai mesi. Monitorare questi casi è essenziale per prevenire potenziali focolai negli esseri umani e salvaguardare la salute pubblica.',
+            "dashboardFeaturesContent": "Il dashboard dei casi di influenza aviaria offre le seguenti funzionalità:\n" +
+                "- **Scegli un database specifico:** Seleziona tra i database disponibili per visualizzare i dati pertinenti.\n" +
+                "- **Confronta i dati tra le località:** Analizza e confronta i casi di influenza aviaria in diverse regioni.\n" +
+                "- **Scegli un periodo specifico:** Filtra i dati in base a periodi specifici nel database.\n" +
+                "- **Cambia vista:** Scegli tra visualizzazioni della mappa singola e doppia per la visualizzazione dei dati.\n" +
+                "- **Modalità della linea temporale:** Passa tra le visualizzazioni stagionali e mensili.\n" +
+                "- **Opzioni di visualizzazione della mappa:** Passa tra mappe a cluster e mappe di calore.\n" +
+                "- **Opzioni di filtro:** Affina i dati per tipo di infezione, specie e provenienza.\n" +
+                "- **Cursore temporale e controlli di riproduzione:** Naviga nei dati utilizzando un cursore temporale e controlli di riproduzione.\n" +
+                "- **Funzione di cattura report PDF:** Stampa un report PDF dettagliato della vista attuale.\n" +
+                "Per gli amministratori:\n" +
+                "- **Accesso e visualizzazione del database:** Accesso sicuro alla visualizzazione e gestione del database.\n" +
+                "- **Aggiornamento del database:** Possibilità di caricare o aggiornare nuovi database per scopi di analisi.",
+            "aboutContent": "Il dashboard dei casi di influenza aviaria offre una piattaforma completa e interattiva per esplorare le epidemie di influenza aviaria. Il monitoraggio di questi casi è essenziale per prevenire potenziali focolai tra gli esseri umani e proteggere la salute pubblica.",
             avianFluTitle: 'Cos’è l’influenza aviaria?',
             avianFluContent:
                 'L’influenza aviaria, comunemente nota come influenza aviaria, è una malattia virale altamente contagiosa che colpisce sia gli uccelli selvatici che quelli domestici. È causata dai virus dell’influenza di tipo A, che comprendono diversi sottotipi, tra cui H5N1, H5N2, H7N2 e H7N8. Alcuni ceppi, in particolare H5N1, sono noti per causare malattie gravi negli esseri umani, sebbene le infezioni umane siano rare e si verifichino generalmente attraverso il contatto diretto o ravvicinato con uccelli infetti o ambienti contaminati.',
@@ -306,19 +376,26 @@ const resources = {
             contactMessage: 'Se hai domande o feedback, non esitare a contattarci a:',
             doubleMapView: 'Vista mappa doppia',
             time: 'Tempo',
+            uploadTitle: 'Carica il tuo file:',
+            selectFile: 'Seleziona file',
+            submit: 'Invia',
+            selectDatabase: 'Seleziona database',
+            singleMapView: 'Vista Mappa Singola',
+            fromDate: 'Data Di Inizio',
+            toDate: 'Data Di Fine',
         },
     },
 };
 
 // Initialize i18n with the resources and default configurations
 i18n
-  .use(initReactI18next) // Use the React-i18next plugin
-  .init({
-    resources, // Load the translation resources defined above
-    lng: 'en', // Set the default language to English
-    interpolation: {
-      escapeValue: false, // Disable escaping because React already handles XSS protection
-    },
-  });
+    .use(initReactI18next) // Use the React-i18next plugin
+    .init({
+        resources, // Load the translation resources defined above
+        lng: 'en', // Set the default language to English
+        interpolation: {
+            escapeValue: false, // Disable escaping because React already handles XSS protection
+        },
+    });
 
 export default i18n;
