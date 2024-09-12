@@ -97,6 +97,7 @@ const resources = {
             singleMapView: 'Single Map View',
             fromDate: 'From Date',
             toDate: 'To Date',
+            dashboardControl: 'Dashboard control',
         },
     },
     fr: {
@@ -192,6 +193,7 @@ const resources = {
             singleMapView: 'Vue Carte Unique',
             fromDate: 'Date De Début',
             toDate: 'Date De Fin',
+            dashboardControl: 'Contrôle du tableau de bord',
         },
     },
     de: {
@@ -287,6 +289,7 @@ const resources = {
             singleMapView: 'Einzelkarte Ansicht',
             fromDate: 'Von Datum',
             toDate: 'Bis Datum',
+            dashboardControl: 'Dashboard-Steuerung',
         },
     },
 
@@ -383,6 +386,7 @@ const resources = {
             singleMapView: 'Vista Mappa Singola',
             fromDate: 'Data Di Inizio',
             toDate: 'Data Di Fine',
+            dashboardControl: 'Controllo del cruscotto',
         },
     },
 };

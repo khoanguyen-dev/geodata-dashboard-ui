@@ -277,7 +277,7 @@ const Dashboard: React.FC = () => {
 
           <Box sx={{ border: '1px solid #ddd', borderRadius: '8px', padding: '16px', marginTop: '20px' }}>
             <Typography variant="subtitle1" gutterBottom sx={{ marginBottom: '12px' }}>
-              {t('options')} - Map 1
+              {t('options')} - 1
             </Typography>
 
             {/* Row for Toggle Buttons */}
@@ -301,7 +301,10 @@ const Dashboard: React.FC = () => {
             <Box sx={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'flex-start' }}>
               {/* Select input for Infection Type */}
               <FormControl sx={{ minWidth: 120 }}>
+                <InputLabel id="select-infectiontype-label">{t('infectionType')}</InputLabel>
                 <Select
+                  labelId="select-infectiontype-label"
+                  input={<OutlinedInput label={t('infectionType')} />}
                   value={selectedFluType1}
                   onChange={(e) => setSelectedFluType1(e.target.value)}
                   displayEmpty
@@ -318,7 +321,10 @@ const Dashboard: React.FC = () => {
 
               {/* Select input for Species */}
               <FormControl sx={{ minWidth: 120 }}>
+                <InputLabel id="select-species-label">{t('species')}</InputLabel>
                 <Select
+                  labelId="select-species-label"
+                  input={<OutlinedInput label={t('species')} />}
                   value={selectedSpecies1}
                   onChange={(e) => setSelectedSpecies1(e.target.value)}
                   displayEmpty
@@ -335,7 +341,10 @@ const Dashboard: React.FC = () => {
 
               {/* Select input for Provenance */}
               <FormControl sx={{ minWidth: 120 }}>
+                <InputLabel id="select-provenance-label">{t('provenance')}</InputLabel>
                 <Select
+                  labelId="select-provenance-label"
+                  input={<OutlinedInput label={t('provenance')} />}
                   value={selectedProvenance1}
                   onChange={(e) => setSelectedProvenance1(e.target.value)}
                   displayEmpty
@@ -367,7 +376,7 @@ const Dashboard: React.FC = () => {
 
             <Box sx={{ border: '1px solid #ddd', borderRadius: '8px', padding: '16px', marginTop: '20px' }}>
               <Typography variant="subtitle1" gutterBottom sx={{ marginBottom: '12px' }}>
-                {t('options')} - Map 2
+                {t('options')} - 2
               </Typography>
 
               {/* Row for Toggle Buttons */}
@@ -492,7 +501,7 @@ const Dashboard: React.FC = () => {
       {/* Dashboard Control - Flex container grouping toggles and controls */}
       <Box sx={{ border: '1px solid #ddd', borderRadius: '8px', padding: '16px', marginTop: '20px' }}>
         <Typography variant="subtitle1" gutterBottom sx={{ marginBottom: '12px' }}>
-          Dashboard Control
+          {t('dashboardControl')}
         </Typography>
 
         {/* Grouped Controls for Database Select, View Mode, and Map View */}
@@ -502,7 +511,7 @@ const Dashboard: React.FC = () => {
             <InputLabel id="select-database-label">{t('selectDatabase')}</InputLabel>
             <Select
               labelId="select-database-label"
-              input={<OutlinedInput label="Select Database" />}
+              input={<OutlinedInput label={t('selectDatabase')} />}
               value={selectedDatabase}
               onChange={handleDatabaseChange}
               displayEmpty

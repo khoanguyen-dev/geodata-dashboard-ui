@@ -17,6 +17,7 @@ This project is a Geodata Dashboard UI designed to visualize bird flu cases over
 - **PDF Report Capture**: Print out a detailed PDF report of the current view.
 - **User Authentication**: Secure access for admins to view and manage databases.
 - **Database Management**: Admins can update or upload new databases for analysis.
+- **Multi-language Support**: Users can switch the website's language between English, French, German, and Italian, enhancing accessibility and usability for a diverse audience.
 - **User Manual**: A comprehensive `user_manual.pdf` is provided to guide users on how to utilize the dashboard's features effectively.
 
 ## Installation and Setup 💻
