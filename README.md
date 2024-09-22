@@ -68,7 +68,7 @@ To start using the Bird Flu Cases Dashboard, follow these steps:
 
    ```bash
    cd backend
-   go run main.go
+   go run server.go
    ```
 - Alternatively, if you prefer using the Node.js backend server:
    ```bash
