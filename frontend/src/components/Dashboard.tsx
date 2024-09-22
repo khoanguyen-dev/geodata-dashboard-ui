@@ -406,7 +406,7 @@ const Dashboard: React.FC = () => {
                     displayEmpty
                     inputProps={{ 'aria-label': 'Infection Type' }}
                   >
-                    <MenuItem value="All">{t('allInfections')}</MenuItem>
+                    <MenuItem value="All">{t('All')}</MenuItem>
                     {fluTypes.map((type) => (
                       <MenuItem key={type} value={type}>
                         {type}
@@ -423,7 +423,7 @@ const Dashboard: React.FC = () => {
                     displayEmpty
                     inputProps={{ 'aria-label': 'Species' }}
                   >
-                    <MenuItem value="All">{t('allSpecies')}</MenuItem>
+                    <MenuItem value="All">{t('All')}</MenuItem>
                     {speciesOptions.map((species) => (
                       <MenuItem key={species} value={species}>
                         {species}
@@ -440,7 +440,7 @@ const Dashboard: React.FC = () => {
                     displayEmpty
                     inputProps={{ 'aria-label': 'Provenance' }}
                   >
-                    <MenuItem value="All">{t('allProvenance')}</MenuItem>
+                    <MenuItem value="All">{t('All')}</MenuItem>
                     {provenanceOptions.map((provenance) => (
                       <MenuItem key={provenance} value={provenance}>
                         {provenance}
