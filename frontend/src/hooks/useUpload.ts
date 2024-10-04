@@ -1,4 +1,4 @@
-import { useState } from 'react'; // Import React hooks for managing state and side effects
+import { useState, useEffect } from 'react'; // Import React hooks for managing state and side effects
 
 /**
  * Custom hook for handling file uploads.
@@ -11,7 +11,7 @@ const useUpload = () => {
 
   /**
    * Function to validate and upload a file to the server.
-   * Checks for file format (CSV) and prevents duplicate filenames before uploading.
+   * Checks for file format (CSV or JSON) and prevents duplicate filenames before uploading.
    */
   const handleFileUpload = async () => {
     if (!file) {
@@ -19,13 +19,18 @@ const useUpload = () => {
       return;
     }
 
-    // Validate file format and check for duplicate filenames
-    if (!file.name.endsWith('.csv')) {
-      setUploadError('Only CSV files are allowed.'); // Error if file is not a CSV
+    // Validate file format (CSV or JSON)
+    const allowedExtensions = ['.csv', '.json'];
+    const fileExtension = file.name.slice(file.name.lastIndexOf('.')).toLowerCase();
+
+    if (!allowedExtensions.includes(fileExtension)) {
+      setUploadError('Only CSV or JSON files are allowed.'); // Error if file is not CSV or JSON
       return;
     }
 
-    if (availableDatabases.includes(file.name.replace('.csv', ''))) {
+    // Check for duplicate filenames (ignoring file extension)
+    const fileNameWithoutExtension = file.name.replace(/\.(csv|json)$/, '');
+    if (availableDatabases.includes(fileNameWithoutExtension)) {
       setUploadError('A file with the same name already exists.'); // Error if file name already exists
       return;
     }
@@ -44,6 +49,7 @@ const useUpload = () => {
 
       setUploadError(null); // Clear any previous upload errors
       setFile(null); // Reset file state
+      await fetchDatabases(); // Refresh available databases after a successful upload
     } catch (error) {
       setUploadError('An error occurred during the file upload.'); // Error if upload fails
     }
@@ -62,6 +68,11 @@ const useUpload = () => {
       setUploadError('Failed to fetch the list of available databases.'); // Error if fetching fails
     }
   };
+
+  // Fetch the list of databases when the component using this hook mounts
+  useEffect(() => {
+    fetchDatabases();
+  }, []); // Empty dependency array ensures this runs once on mount
 
   return {
     file, // The current selected file state
